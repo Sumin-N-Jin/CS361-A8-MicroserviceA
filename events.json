@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2025-08-01",
+    "time": "13:00",
+    "title": "CS361 Meeting",
+    "location": "Online",
+    "notes": "Discuss microservice integration",
+    "uuid": "abc123"
+  },
+  {
+    "date": "2025-08-02",
+    "time": "09:30",
+    "title": "Doctor Appointment",
+    "location": "Corvallis",
+    "notes": "",
+    "uuid": "def456"
+  },
+  {
+    "date": "2025-08-02",
+    "time": "00:30",
+    "title": "Meeting with Asia department",
+    "location": "",
+    "notes": "",
+    "uuid": "def456"
+  }
+]
