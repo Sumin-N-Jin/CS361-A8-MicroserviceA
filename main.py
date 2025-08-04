@@ -49,14 +49,18 @@ for event in events:
         response = requests.post("http://localhost:5001/convert", json=request_data)
         result = response.json()
 
-        if "converted_datetime" not in result:
+        converted = result.get("converted_datetime", {})
+        if "date" not in converted or "time" not in converted:
             print(f"Error converting event: {event.get('title', 'Untitled')}")
             print("Details:", result.get("error", "Unknown error"))
             continue
 
-        dt = datetime.fromisoformat(result["converted_datetime"])
-        event["date"] = dt.strftime("%Y-%m-%d")
-        event["time"] = dt.strftime("%H:%M")
+        # edit format
+        # dt = datetime.fromisoformat(result["converted_datetime"])
+        # event["date"] = dt.strftime("%Y-%m-%d")
+        # event["time"] = dt.strftime("%H:%M")
+        event["date"] = converted["date"]
+        event["time"] = converted["time"]
 
         converted_events.append(event)
 

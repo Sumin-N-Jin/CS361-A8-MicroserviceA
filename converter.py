@@ -32,8 +32,10 @@ def convert_utc_to_local(utc_str, offset, is_dst):
     total_offset = offset + dst_hour
     local_dt = utc_dt + timedelta(hours=total_offset)
 
-    return local_dt.isoformat()
-
+    return {
+        "date": local_dt.strftime("%Y-%m-%d"),
+        "time": local_dt.strftime("%H:%M")
+    }
 
 @app.route("/convert", methods=["POST"])
 def convert():
