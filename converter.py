@@ -40,6 +40,7 @@ def convert_utc_to_local(utc_str, offset, is_dst):
 @app.route("/convert", methods=["POST"])
 def convert():
     data = request.get_json()
+    print(f"Received request: {data}")  # Add receive message
 
     if data.get("command") != "convert_datetime":
         return jsonify({"error": "Invalid command"}), 400

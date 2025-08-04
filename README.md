@@ -2,7 +2,7 @@
 
 The Microservice A I implemented in Sprint 2 converts UTC datetime strings to the local time based on a specified timezone offset and Daylight Saving Time (DST) status.
 
-This microservice was implemented for my teammate, Bevan Li
+This microservice was implemented for my teammate, Bevan Li.
 
 ## Requesting Data
 
@@ -76,3 +76,9 @@ This UML diagram shows how the main program interacts with the microservice via 
 
 <img src="https://github.com/Sumin-N-Jin/CS361-A8-MicroserviceA/blob/main/CS361-A8-UML.jpeg?raw=true" alt="UML Sequence Diagram" width="1000"/>
 
+### What to Do if You Cannot Access the Microservice
+
+If you are unable to access or call the microservice, please reach out to me directly via Microsoft Teams.
+If there is a problem, please don’t hesitate to contact me — I will respond within 24 hours.
+
+Please notify me of any problems with the microservice by August 8, 2025, so I can resolve them in time.
