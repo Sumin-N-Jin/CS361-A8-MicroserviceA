@@ -7,7 +7,7 @@ The Microservice A I implemented in Sprint 2 converts UTC datetime strings to th
 Use Python's `requests` module to send a `POST` request to the Flask REST API.
 
 - **Endpoint**: `http://localhost:5001/convert`
-- **Method**: 'POST'
+- **Method**: `POST`
 - **Content-Type**: `application/json`
 
 ### Required JSON payload fields:
