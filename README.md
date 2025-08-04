@@ -18,19 +18,20 @@ Use Python's `requests` module to send a `POST` request to the Flask REST API.
 - **is_dst** (`bool`): Whether DST is active (true/false)
 
 ### Example request:
-
+```python
 data = {
     "command": "convert_datetime",
     "utc_datetime": "2025-08-01 13:00",
     "timezone_offset": -8,
     "is_dst": True
 }
+```
 
 response = requests.post("http://localhost:5001/convert", json=data)
 print(response.json())
 
 ### Example response:
-
+```json
 {
   "date": "2025-08-01",
   "time": "06:00",
@@ -39,7 +40,7 @@ print(response.json())
   "notes": "Discuss microservice integration",
   "uuid": "abc123"
 }
-
+```
 ### Receiving Data
 Run the microservice using Flask:
 python3 converter.py
@@ -70,5 +71,5 @@ This ensures flexibility: the main program can freely determine input/output fil
 ### UML Sequence Diagram
 This UML diagram shows how the main program interacts with the microservice via HTTP requests:
 
-https://github.com/Sumin-N-Jin/CS361-A8-MicroserviceA/blob/main/CS361-A8-UML.jpeg
+<img src="https://github.com/Sumin-N-Jin/CS361-A8-MicroserviceA/blob/main/CS361-A8-UML.jpeg?raw=true" alt="UML Sequence Diagram" width="1000"/>
 
