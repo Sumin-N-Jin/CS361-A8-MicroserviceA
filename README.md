@@ -2,36 +2,38 @@
 
 The Microservice A I implemented in Sprint 2 converts UTC datetime strings to the local time based on a specified timezone offset and Daylight Saving Time (DST) status.
 
+This microservice was implemented for my teammate, Bevan Li
+
 ## Requesting Data
 
 Use Python's `requests` module to send a `POST` request to the Flask REST API.
 
 - **Endpoint**: `http://localhost:5001/convert`
-- **Method**: `POST`
+- **Method**: POST
 - **Content-Type**: `application/json`
 
 ### Required JSON payload fields:
 
 - **command** (`str`): Must be `"convert_datetime"`
-- **utc_datetime** (`str`): UTC datetime string in `"YYYY-MM-DD HH:MM"` format
+- **date** (`str`): UTC date in `"YYYY-MM-DD"` format
+- **time** (`str`): UTC time in `"HH:MM"` 24-hour format
 - **timezone_offset** (`int`): Local timezone offset from UTC (range: -12 to +12)
 - **is_dst** (`bool`): Whether DST is active (true/false)
 
 ### Example request:
-```python
+
 data = {
     "command": "convert_datetime",
     "utc_datetime": "2025-08-01 13:00",
     "timezone_offset": -8,
     "is_dst": True
 }
-```
 
 response = requests.post("http://localhost:5001/convert", json=data)
 print(response.json())
 
 ### Example response:
-```json
+
 {
   "date": "2025-08-01",
   "time": "06:00",
@@ -40,7 +42,7 @@ print(response.json())
   "notes": "Discuss microservice integration",
   "uuid": "abc123"
 }
-```
+
 ### Receiving Data
 Run the microservice using Flask:
 python3 converter.py
@@ -71,5 +73,5 @@ This ensures flexibility: the main program can freely determine input/output fil
 ### UML Sequence Diagram
 This UML diagram shows how the main program interacts with the microservice via HTTP requests:
 
-<img src="https://github.com/Sumin-N-Jin/CS361-A8-MicroserviceA/blob/main/CS361-A8-UML.jpeg?raw=true" alt="UML Sequence Diagram" width="1000"/>
+https://github.com/Sumin-N-Jin/CS361-A8-MicroserviceA/blob/main/CS361-A8-UML.jpeg
 
